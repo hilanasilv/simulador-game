@@ -14,16 +14,12 @@ public class JumpingEnemy : Enemy
         : base(health, velocity)
     {
         _altitude = altitude;
+        EnemyType = "Jumping";
     }
 
     // Método de salto
     public void Jump()
     {
         Console.WriteLine("JumpingEnemy está pulando para a frente!");
-    }
-
-    public override void Move()
-    {
-        Console.WriteLine("JumpingEnemy está pulando.");
     }
 }

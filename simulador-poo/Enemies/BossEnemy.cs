@@ -13,6 +13,7 @@ public class BossEnemy : Enemy
 
     public BossEnemy(int health, float velocity) : base(health, velocity)
     {
+        EnemyType = "Boss";
         _isInfuriated = false;
     }
 
@@ -22,18 +23,5 @@ public class BossEnemy : Enemy
         if (IsDead() || Health > 50) return;
         _isInfuriated = true;
         Console.WriteLine("Chefão com raiva!");
-    }
-
-    // O movimento do Chefão muda de acordo com o estado de fúria
-    public override void Move()
-    {
-        if (_isInfuriated)
-        {
-            Console.WriteLine("Chefão se movendo de forma agressiva!");
-        }
-        else
-        {
-            Console.WriteLine("Chefão se movendo.");
-        }
     }
 }

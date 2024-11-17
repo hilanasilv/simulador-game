@@ -14,16 +14,12 @@ public class FlyingEnemy : Enemy
         : base(health, velocity)
     {
         _altitude = altitude;
+        EnemyType = "Flying";
     }
 
     // Método de voo
     public void Fly()
     {
         Console.WriteLine($"FlyingEnemy voando na altitude de: {Altitude}");
-    }
-
-    public override void Move()
-    {
-        Console.WriteLine("FlyingEnemy se movendo pelo ar.");
     }
 }

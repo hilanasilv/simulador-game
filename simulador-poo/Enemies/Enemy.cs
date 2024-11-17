@@ -6,6 +6,9 @@ public class Enemy
     private int _currentHealth;
     private float _velocity;
 
+    // Propriedade que indica o tipo de inimigo
+    public string EnemyType { get; protected set; }
+
     // Acessa a saúde do inimigo
     public int Health
     {
@@ -45,12 +48,30 @@ public class Enemy
         return Health <= 0;
     }
 
-    // Método para mover o inimigo
-    public virtual void Move()
+    // Método de movimento centralizado
+    public void Move()
     {
-        Console.WriteLine($"Enemy se movendo com {Velocity} de velocidade.");
+        if (EnemyType == "Flying")
+        {
+            Console.WriteLine("FlyingEnemy se movendo pelo ar.");
+        }
+        else if (EnemyType == "Jumping")
+        {
+            Console.WriteLine("JumpingEnemy está pulando.");
+        }
+        else if (EnemyType == "Stealthy")
+        {
+            Console.WriteLine("StealthyEnemy está se movendo nas sombras.");
+        }
+        else if (EnemyType == "Boss")
+        {
+            Console.WriteLine("Chefão está se movendo.");
+        }
+        else
+        {
+            Console.WriteLine($"Enemy se movendo com {Velocity} de velocidade.");
+        }
     }
-
 
     // Método para exibir o status do inimigo
     public void DisplayStatus()
